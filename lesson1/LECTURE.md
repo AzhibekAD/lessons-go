@@ -13,7 +13,7 @@ It is often referred to as Golang because of its former domain name, golang.org,
 ## Prepare
 
 ```shell
-$ go mod init github.com/talgat-ruby/lessons-go/lesson1
+$ go mod init github.com/talgat-ruby/lessons-go/src
 
 $ touch main.go
 ```
@@ -105,7 +105,7 @@ Hello, Leila! Your table is 5.
 ```shell
 $ go build
 
-$ ./lesson1
+$ ./src
 Hello, Leila! Your table is 5.
 ```
 
@@ -158,13 +158,13 @@ func TestTableGreet(t *testing.T) {
 
 ```shell
 $ go test -v ./...
-?   	github.com/talgat-ruby/lessons-go/lesson1	[no test files]
+?   	github.com/talgat-ruby/lessons-go/src	[no test files]
 === RUN   TestGreet
 --- PASS: TestGreet (0.00s)
 === RUN   TestTableGreet
 --- PASS: TestTableGreet (0.00s)
 PASS
-ok  	github.com/talgat-ruby/lessons-go/lesson1/greet	0.923s
+ok  	github.com/talgat-ruby/lessons-go/src/greet	0.923s
 ```
 
 ## Homework:

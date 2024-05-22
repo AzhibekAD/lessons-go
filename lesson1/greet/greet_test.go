@@ -3,10 +3,10 @@ package greet
 import "testing"
 
 func TestGreet(t *testing.T) {
-	expected_output := "Hello, Azhibek! \n"
-	text := Greet("Azhibek")
+	expectedOutput := "Hello, Azhibek! Your table is 12!"
+	text := Greet("Azhibek", "12")
 
-	if text != expected_output {
-		t.Errorf("Greetings was incorrect, got: %s, expected: %s", text, expected_output)
+	if text != expectedOutput {
+		t.Errorf("Greetings was incorrect, got: %s, expected: %s", text, expectedOutput)
 	}
 }

@@ -3,9 +3,8 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"os"
-
 	"github.com/talgat-ruby/lessons-go/greet"
+	"os"
 )
 
 func init() {
@@ -14,14 +13,27 @@ func init() {
 
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
+	tableScanner := bufio.NewScanner(os.Stdin)
 
 	fmt.Println("Please enter your name below: ")
-
 	for scanner.Scan() {
-		text := scanner.Text()
+		var table string
+		var text string
+
+		text = scanner.Text()
+
 		if text != "" {
-			greetings := greet.Greet(text)
-			fmt.Printf(greetings)
+			fmt.Println("Please enter your table number below: ")
+			for tableScanner.Scan() {
+				table = tableScanner.Text()
+				if table == "" {
+					fmt.Println("Please enter your name again.")
+					break
+				} else {
+					greetings := greet.Greet(text, table)
+					fmt.Printf(greetings)
+				}
+			}
 		} else {
 			fmt.Println("Please enter your name.")
 		}
